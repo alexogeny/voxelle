@@ -52,7 +52,6 @@ def interactive_cli():
     # API Key Input
     config.read("config.ini")
     api_key = config.get("Preferences", "xi-api-key", fallback=None)
-    click.echo(config.get("Preferences", "xi-api-key"))
     if api_key is None or not test_api_key(api_key):
         while True:
             api_key = click.prompt("Please enter your ElevenLabs API key")

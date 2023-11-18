@@ -1,0 +1,30 @@
+[project]
+name = "voxelle"
+version = "0.1.0"
+description = "Your tool for creating vocal harmony, whether in assistance or in transforming your spoken words into captivating sounds."
+authors = [
+    { name = "alexogeny", email = "6896115+alexogeny@users.noreply.github.com" }
+]
+dependencies = [
+    "click>=8.1.7",
+    "httpx>=0.25.1",
+    "websockets>=12.0",
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "black>=23.11.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project.scripts]
+voxelle = "voxelle.__init__:interactive_cli"
